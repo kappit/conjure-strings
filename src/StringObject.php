@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Conjure\Strings;
 
+use Stringable;
+
 /**
  * Class StringObject
  * @package Conjure\Strings
  */
-class StringObject implements \Stringable
+class StringObject implements Stringable
 {
-
 
     /**
      * StringObject constructor.
@@ -25,7 +26,7 @@ class StringObject implements \Stringable
     /**
      * @return string
      */
-    public function __toString() : string
+    public function __toString(): string
     {
         return $this->string;
     }
