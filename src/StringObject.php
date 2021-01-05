@@ -24,6 +24,14 @@ class StringObject implements Stringable
     }
 
     /**
+     *
+     */
+    public function reverse(): void
+    {
+        // To do
+    }
+
+    /**
      * @return string
      */
     public function __toString(): string
