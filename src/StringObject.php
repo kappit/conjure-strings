@@ -22,6 +22,10 @@ class StringObject implements Stringable
     )
     {
     }
+	
+	public function equals(): bool {
+		return false;
+	}
 
     /**
      *
