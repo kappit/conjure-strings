@@ -42,6 +42,17 @@ class StringObject implements Stringable
         return str_contains(haystack: $this->string, needle: (string)$value);
     }
 
+
+    /**
+     * @return $this
+     */
+    public function reverse(): self
+    {
+        $this->string = strrev($this->string);
+
+        return $this;
+    }
+
     /**
      * @return string
      */
