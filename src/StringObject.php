@@ -42,7 +42,6 @@ class StringObject implements Stringable
         return str_contains(haystack: $this->string, needle: (string)$value);
     }
 
-
     /**
      * @return $this
      */
@@ -53,6 +52,16 @@ class StringObject implements Stringable
         return $this;
     }
 
+    /**
+     * @param string $characters
+     * @return $this
+     */
+    public function trim(string $characters = ' '): self
+    {
+        $this->string = trim(string: $this->string, characters: $characters);
+
+        return $this;
+    }
 
     /**
      * @return bool
