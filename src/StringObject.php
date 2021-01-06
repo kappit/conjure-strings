@@ -53,6 +53,15 @@ class StringObject implements Stringable
         return $this;
     }
 
+
+    /**
+     * @return bool
+     */
+    public function isEmpty(): bool
+    {
+        return $this->string === '';
+    }
+
     /**
      * @return string
      */
