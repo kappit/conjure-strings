@@ -1,24 +1,26 @@
 {
-    "name": "kappit/conjure-strings",
-	"type": "library",
-    "description": "Strings component for conjure framework",
-	"keywords": ["framework"],
-    "homepage": "https://github.com/kappit",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Kasper Hansen",
-            "email": "kasper.h90@outlook.dk"
-        }
-    ],
-    "minimum-stability": "dev",
-	"version": "1.0.0",
-    "require": {
-        "php": ">=8.0.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Conjure\\Strings\\" : "src/"
-        }
+  "name": "kappit/conjure-strings",
+  "type": "library",
+  "description": "Strings component for conjure framework",
+  "keywords": [
+    "framework"
+  ],
+  "homepage": "https://github.com/kappit",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kasper Hansen",
+      "email": "kasper.h90@outlook.dk"
     }
+  ],
+  "minimum-stability": "stable",
+  "version": "1.0.0",
+  "require": {
+    "php": ">=8.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Conjure\\Strings\\": "src/"
+    }
+  }
 }

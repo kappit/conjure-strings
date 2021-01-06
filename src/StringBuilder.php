@@ -61,4 +61,5 @@ class StringBuilder implements Stringable
     {
         return $this->string;
     }
+
 }

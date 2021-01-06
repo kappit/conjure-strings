@@ -22,17 +22,14 @@ class StringObject implements Stringable
     )
     {
     }
-	
-	public function equals(): bool {
-		return false;
-	}
 
     /**
-     *
+     * @param string $string
+     * @return bool
      */
-    public function reverse(): void
+    public function equals(string $string): bool
     {
-        // To do
+        return $this->string === $string;
     }
 
     /**
