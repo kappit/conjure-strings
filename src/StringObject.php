@@ -47,7 +47,7 @@ class StringObject implements Stringable
      */
     public function reverse(): self
     {
-        $this->string = strrev($this->string);
+        $this->string = strrev(string: $this->string);
 
         return $this;
     }
