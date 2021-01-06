@@ -71,6 +71,20 @@ class StringObject implements Stringable
         return $this->string === '';
     }
 
+
+    /**
+     * @param string $delimiter
+     * @return array<string>
+     */
+    #[Pure] public function split(string $delimiter): array
+    {
+        if ($delimiter === '') {
+            return [];
+        }
+
+        return explode(separator: $delimiter, string: $this->string);
+    }
+
     /**
      * @return string
      */
