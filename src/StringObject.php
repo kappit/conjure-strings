@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Conjure\Strings;
 
+use Exception;
 use JetBrains\PhpStorm\Pure;
 use Stringable;
 
@@ -17,11 +18,21 @@ class StringObject implements Stringable
     /**
      * StringObject constructor.
      * @param string $string
+     * @throws Exception
      */
     public function __construct(
         private string $string
     )
     {
+
+        $stripInvalidUtf8CharactersFromString = @iconv('UTF-8', 'UTF-8//IGNORE', $string);
+
+        if (!$stripInvalidUtf8CharactersFromString) {
+            throw new Exception();
+        }
+
+        $this->string = $stripInvalidUtf8CharactersFromString;
+
     }
 
     /**
@@ -61,6 +72,14 @@ class StringObject implements Stringable
         $this->string = trim(string: $this->string, characters: $characters);
 
         return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function length(): int
+    {
+        return mb_strlen($this->string);
     }
 
     /**
