@@ -25,9 +25,11 @@ class StringObject implements Stringable
     )
     {
 
-        $stripInvalidUtf8CharactersFromString = @iconv('UTF-8', 'UTF-8//IGNORE', $string);
+        $stripInvalidUtf8CharactersFromString = @iconv(from_encoding: 'UTF-8', to_encoding: 'UTF-8//IGNORE', string: $string);
 
         if (!$stripInvalidUtf8CharactersFromString) {
+
+            // This exception needs to be corrected
             throw new Exception();
         }
 
@@ -79,7 +81,7 @@ class StringObject implements Stringable
      */
     public function length(): int
     {
-        return mb_strlen($this->string);
+        return mb_strlen(string: $this->string);
     }
 
     /**
