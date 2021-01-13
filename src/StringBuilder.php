@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Conjure\Strings;
 
-use JetBrains\PhpStorm\Pure;
+use Exception;
 use Stringable;
 
 /**
@@ -48,8 +48,9 @@ class StringBuilder implements Stringable
 
     /**
      * @return StringObject
+     * @throws Exception
      */
-    #[Pure] public function toStringObject(): StringObject
+    public function toStringObject(): StringObject
     {
         return new StringObject(string: $this->string);
     }
