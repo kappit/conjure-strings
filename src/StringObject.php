@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Conjure\Strings;
 
 use Exception;
-use JetBrains\PhpStorm\Pure;
 use Stringable;
 
 /**
@@ -50,7 +49,7 @@ class StringObject implements Stringable
      * @param bool|int|float|string $value
      * @return bool
      */
-    #[Pure] public function contains(bool|int|float|string $value): bool
+    public function contains(bool|int|float|string $value): bool
     {
         return str_contains(haystack: $this->string, needle: (string)$value);
     }
@@ -97,7 +96,7 @@ class StringObject implements Stringable
      * @param string $delimiter
      * @return array<string>
      */
-    #[Pure] public function split(string $delimiter): array
+    public function split(string $delimiter): array
     {
         if ($delimiter === '') {
             return [];
