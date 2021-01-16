@@ -13,11 +13,11 @@
       "email": "kasper.h90@outlook.dk"
     }
   ],
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "require": {
     "php": ">=8.0.0",
-    "symfony/polyfill-iconv": ">=1.0.0",
-    "symfony/polyfill-mbstring": ">=1.0.0"
+    "symfony/polyfill-iconv": "~1.22.0",
+    "symfony/polyfill-mbstring": "~1.22.0"
   },
   "autoload": {
     "psr-4": {
