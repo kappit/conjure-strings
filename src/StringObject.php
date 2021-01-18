@@ -23,13 +23,21 @@ class StringObject implements Stringable
         private string $string
     )
     {
-        $stripInvalidUtf8CharactersFromString = @iconv(from_encoding: 'UTF-8', to_encoding: 'UTF-8//IGNORE', string: $string);
+        $stripInvalidUtfCharactersFromString = @iconv(
+            from_encoding: 'UTF-8',
+            to_encoding: 'UTF-8//IGNORE',
+            string: $string
+        );
 
-        if (!$stripInvalidUtf8CharactersFromString) {
+        if (!$stripInvalidUtfCharactersFromString) {
             throw new Exception();
         }
 
-        $html = htmlspecialchars(string: $stripInvalidUtf8CharactersFromString, flags: ENT_QUOTES);
+        $html = htmlspecialchars(
+            string: $stripInvalidUtfCharactersFromString,
+            flags: ENT_QUOTES
+        );
+
         $sanitize = filter_var(value: $html, filter: FILTER_SANITIZE_STRING);
 
         if (!$sanitize) {
